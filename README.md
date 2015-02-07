@@ -1,9 +1,10 @@
 # CakePHP: Cake Bake Console Theme for apps using Bootstrap
+A personal theme for baking custom views, when app uses Twitter Bootstrap to perform user interface.
 
 ##Requirements 
-* CakePHP 2.5.* (only tested on v2.5.6)
+* CakePHP v2 (only tested on 2.5.6)
   * Requirements of CakePHP
-* Bootstrap 3.3.2
+* Bootstrap v3 (only tested on 3.3.2)
   * Requirements of Bootstrap
 
 ## Installation directory

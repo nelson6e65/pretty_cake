@@ -131,30 +131,47 @@ foreach ($fields as $field) {
 	<div class="panel-body">
 
 <?php
-
 if (!empty($associations['hasOne'])) :
 	foreach ($associations['hasOne'] as $alias => $details): ?>
-	<div class="related">
-		<h3><?php echo "<?php echo __('Related " . Inflector::humanize($details['controller']) . "'); ?>"; ?></h3>
+		<div id="<?php echo $pluralVar; ?>-related-hasOne" class="panel panel-active">
+			<div class="panel-heading">
+				<h4 class="panel-title"><?php echo "<?php echo __('Related " . Inflector::humanize($details['controller']) . "'); ?>"; ?></h4>
+			</div>
+
+			<!-- <div class="panel-body"></div>	 -->
+
 	<?php echo "<?php if (!empty(\${$singularVar}['{$alias}'])): ?>\n"; ?>
-		<dl>
+
+			<div class="list-group">
 	<?php
-			foreach ($details['fields'] as $field) {
-				echo "\t\t<dt><?php echo __('" . Inflector::humanize($field) . "'); ?></dt>\n";
-				echo "\t\t<dd>\n\t<?php echo \${$singularVar}['{$alias}']['{$field}']; ?>\n&nbsp;</dd>\n";
-			}
+		foreach ($details['fields'] as $field) {
+			echo "\t\t\t\t<div class=\"list-group-item\">\n";
+
+			echo "\t\t\t\t<h5 class=\"list-group-item-heading\"><?php echo __('" . Inflector::humanize($field) . "'); ?></h5>\n";
+			echo "\t\t\t\t\t<p class=\"list-group-item-text\">\n\t<?php echo \${$singularVar}['{$alias}']['{$field}']; ?>\n&nbsp;</p>\n";
+
+			echo "\t\t\t\t</div>\n";
+		}
 	?>
-		</dl>
+			</div>
 	<?php echo "<?php endif; ?>\n"; ?>
-		<div class="vactions">
-			<ul>
-				<li><?php echo "<?php echo \$this->Html->link(__('Edit " . Inflector::humanize(Inflector::underscore($alias)) . "'), array('controller' => '{$details['controller']}', 'action' => 'edit', \${$singularVar}['{$alias}']['{$details['primaryKey']}']), array('class' => 'btn btn-warning')); ?></li>\n"; ?>
-			</ul>
+
+
+			<div class="panel-footer">
+				<div class="btn-toolbar" role="toolbar">
+					<div class="btn-group" role="group">
+	<?php echo "\t\t\t\t\t\t<?php echo \$this->Html->link(__('Edit " . Inflector::humanize(Inflector::underscore($alias)) . "'), array('controller' => '{$details['controller']}', 'action' => 'edit', \${$singularVar}['{$alias}']['{$details['primaryKey']}']), array('class' => 'btn btn-warning')); ?></li>\n"; ?>
+					</div>
+				</div>
+			</div>
 		</div>
-	</div>
-	<?php
-	endforeach;
-endif;
+<?php
+	endforeach; //$associations['hasOne'] as $alias => $details
+endif; //!empty($associations['hasOne'])
+?>
+
+<?php
+
 if (empty($associations['hasMany'])) {
 	$associations['hasMany'] = array();
 }

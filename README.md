@@ -85,9 +85,11 @@ The default `{theme_name}` is `bake_bootstrap`:
 - [ ] Personalize 'add' view
 - [ ] Personalize 'edit' view
 - [ ] Add 'delete' view (?)
+- [ ] Add 'find' view
 
 ### Controller actions
 - [ ] Personalize 'delete' action
+- [ ] Add 'delete' action
 
 ##Licence
 Licensed under The MIT License (MIT). Check [LICENSE](/LICENSE) for full copyright and license information.

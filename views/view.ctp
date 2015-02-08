@@ -129,7 +129,6 @@ foreach ($fields as $field) {
 
 
 	<div class="panel-body">
-
 <?php
 if (!empty($associations['hasOne'])) :
 	foreach ($associations['hasOne'] as $alias => $details): ?>
@@ -140,10 +139,10 @@ if (!empty($associations['hasOne'])) :
 
 			<!-- <div class="panel-body"></div>	 -->
 
-	<?php echo "<?php if (!empty(\${$singularVar}['{$alias}'])): ?>\n"; ?>
+<?php 	echo "<?php if (!empty(\${$singularVar}['{$alias}'])): ?>\n"; ?>
 
 			<div class="list-group">
-	<?php
+<?php
 		foreach ($details['fields'] as $field) {
 			echo "\t\t\t\t<div class=\"list-group-item\">\n";
 
@@ -152,26 +151,28 @@ if (!empty($associations['hasOne'])) :
 
 			echo "\t\t\t\t</div>\n";
 		}
-	?>
+?>
 			</div>
-	<?php echo "<?php endif; ?>\n"; ?>
-
+<?php
+		echo "<?php endif; ?>\n"; ?>
 
 			<div class="panel-footer">
 				<div class="btn-toolbar" role="toolbar">
 					<div class="btn-group" role="group">
-	<?php echo "\t\t\t\t\t\t<?php echo \$this->Html->link(__('Edit " . Inflector::humanize(Inflector::underscore($alias)) . "'), array('controller' => '{$details['controller']}', 'action' => 'edit', \${$singularVar}['{$alias}']['{$details['primaryKey']}']), array('class' => 'btn btn-warning')); ?></li>\n"; ?>
+<?php
+		echo "\t\t\t\t\t\t<?php echo \$this->Html->link(__('Edit " . Inflector::humanize(Inflector::underscore($alias)) . "'), array('controller' => '{$details['controller']}', 'action' => 'edit', \${$singularVar}['{$alias}']['{$details['primaryKey']}']), array('class' => 'btn btn-warning')); ?></li>\n"; ?>
 					</div>
 				</div>
 			</div>
+
 		</div>
+
 <?php
 	endforeach; //$associations['hasOne'] as $alias => $details
 endif; //!empty($associations['hasOne'])
 ?>
 
 <?php
-
 if (empty($associations['hasMany'])) {
 	$associations['hasMany'] = array();
 }
@@ -183,44 +184,65 @@ foreach ($relations as $alias => $details):
 	$otherSingularVar = Inflector::variable($alias);
 	$otherPluralHumanName = Inflector::humanize($details['controller']);
 	?>
-<div class="related">
-	<h3><?php echo "<?php echo __('Related " . $otherPluralHumanName . "'); ?>"; ?></h3>
-	<?php echo "<?php if (!empty(\${$singularVar}['{$alias}'])): ?>\n"; ?>
-	<table cellpadding = "0" cellspacing = "0">
-	<tr>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h4 class="panel-title"><?php echo "<?php echo __('Related " . $otherPluralHumanName . "'); ?>"; ?></h4>
+			</div>
+
 <?php
-			foreach ($details['fields'] as $field) {
-				echo "\t\t<th><?php echo __('" . Inflector::humanize($field) . "'); ?></th>\n";
-			}
-?>
-		<th class="vactions"><?php echo "<?php echo __('Actions'); ?>"; ?></th>
-	</tr>
+		echo "<?php if (!empty(\${$singularVar}['{$alias}'])): ?>\n"; ?>
+			<table class="table table-bordered">
+				<thead>
+					<tr>
 <?php
-echo "\t<?php foreach (\${$singularVar}['{$alias}'] as \${$otherSingularVar}): ?>\n";
-		echo "\t\t<tr>\n";
+		foreach ($details['fields'] as $field) {
+			echo "\t\t\t\t\t\t<th><?php echo __('" . Inflector::humanize($field) . "'); ?></th>\n";
+		}
+?>
+						<th><?php echo "<?php echo __('Actions'); ?>"; ?></th>
+					</tr>
+				</thead>
+
+				<tbody>
+<?php
+		echo "\t<?php foreach (\${$singularVar}['{$alias}'] as \${$otherSingularVar}): ?>\n";
+			echo "\t\t\t\t\t<tr>\n";
 			foreach ($details['fields'] as $field) {
-				echo "\t\t\t<td><?php echo \${$otherSingularVar}['{$field}']; ?></td>\n";
+				echo "\t\t\t\t\t\t<td><?php echo \${$otherSingularVar}['{$field}']; ?></td>\n";
 			}
 
-			echo "\t\t\t<td class=\"vactions\">\n";
-			echo "\t\t\t\t<?php echo \$this->Html->link(__('View'), array('controller' => '{$details['controller']}', 'action' => 'view', \${$otherSingularVar}['{$details['primaryKey']}']), array('class' => 'btn btn-info  btn-sm')); ?>\n";
-			echo "\t\t\t\t<?php echo \$this->Html->link(__('Edit'), array('controller' => '{$details['controller']}', 'action' => 'edit', \${$otherSingularVar}['{$details['primaryKey']}']), array('class' => 'btn btn-warning  btn-sm')); ?>\n";
-			echo "\t\t\t\t<?php echo \$this->Form->postLink(__('Delete'), array('controller' => '{$details['controller']}', 'action' => 'delete', \${$otherSingularVar}['{$details['primaryKey']}']), array('class' => 'btn btn-danger  btn-sm'), __('Are you sure you want to delete # %s?', \${$otherSingularVar}['{$details['primaryKey']}'])); ?>\n";
-			echo "\t\t\t</td>\n";
-		echo "\t\t</tr>\n";
+			echo "\t\t\t\t\t\t<td>\n";
 
-echo "\t<?php endforeach; ?>\n";
-?>
-	</table>
-<?php echo "<?php endif; ?>\n\n"; ?>
-	<div class="vactions">
-		<ul>
-			<li><?php echo "<?php echo \$this->Html->link(__('New " . Inflector::humanize(Inflector::underscore($alias)) . "'), array('controller' => '{$details['controller']}', 'action' => 'add'), array('class' => 'btn btn-primary')); ?>"; ?> </li>
-		</ul>
-	</div>
-</div>
-<?php endforeach; ?>
+			echo "\t\t\t\t\t\t\t<div class=\"btn-group\" role=\"group\">\n";
 
-	</div>
+			echo "\t\t\t\t\t\t\t<?php echo \$this->Html->link(__('View'), array('controller' => '{$details['controller']}', 'action' => 'view', \${$otherSingularVar}['{$details['primaryKey']}']), array('class' => 'btn btn-info btn-xs')); ?>\n";
+
+			echo "\t\t\t\t\t\t\t<?php echo \$this->Html->link(__('Edit'), array('controller' => '{$details['controller']}', 'action' => 'edit', \${$otherSingularVar}['{$details['primaryKey']}']), array('class' => 'btn btn-warning btn-xs')); ?>\n";
+
+			echo "\t\t\t\t\t\t\t<?php echo \$this->Form->postLink(__('Delete'), array('controller' => '{$details['controller']}', 'action' => 'delete', \${$otherSingularVar}['{$details['primaryKey']}']), array('class' => 'btn btn-danger btn-xs'), __('Are you sure you want to delete # %s?', \${$otherSingularVar}['{$details['primaryKey']}'])); ?>\n";
+
+			echo "\t\t\t\t\t\t\t</div>\n";
+
+			echo "\t\t\t\t\t\t</td>\n";
+
+			echo "\t\t\t\t\t</tr>\n";
+
+		echo "\t<?php endforeach; ?>\n";
+	?>
+				</tbody>
+			</table>
+<?php 	echo "<?php endif; ?>\n\n"; ?>
+
+			<div class="panel-footer">
+				<div class="btn-group" role="group">
+<?php 	echo "\t\t\t\t<?php echo \$this->Html->link(__('New " . Inflector::humanize(Inflector::underscore($alias)) . "'), array('controller' => '{$details['controller']}', 'action' => 'add'), array('class' => 'btn btn-primary')); ?>\n"; ?>
+				</div>
+			</div>
+
+		</div>
+<?php
+endforeach; //$relations as $alias => $details ?>
+
+	</div> <!-- END -related panel-body -->
 
 </div><!-- END -related -->

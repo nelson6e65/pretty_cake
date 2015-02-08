@@ -2,10 +2,13 @@
 A personal theme for baking custom views, when app uses Twitter Bootstrap to perform user interface.
 
 ## Requirements 
-* **CakePHP 2** (only tested on 2.5.6)
-  * Requirements of CakePHP
-* **Bootstrap 3** (only tested on 3.3.2)
-  * Requirements of Bootstrap
+This template theme is for Cake Bake Utility of [CakePHP 2.x](http://cakephp.org/) (for now, only testing on 2.5.6).
+
+* Resources
+  * [Bootstrap 3.x](http://getbootstrap.com/) (for now, only testing on 3.3.2)
+  * [Font Awesome 4.x](http://fontawesome.io/) (for now, only testing on 4.2.0)
+
+You should include Cascading Style Sheets (\*.css), JavaScript (\*.js) and Font resources in your layout(s).
 
 ## Installation
 ### GIT submodule

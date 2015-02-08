@@ -189,9 +189,10 @@ foreach ($relations as $alias => $details):
 				<h4 class="panel-title"><?php echo "<?php echo __('Related " . $otherPluralHumanName . "'); ?>"; ?></h4>
 			</div>
 
+			<div class="panel-body" style="overflow: auto;">
 <?php
 		echo "<?php if (!empty(\${$singularVar}['{$alias}'])): ?>\n"; ?>
-			<table class="table table-bordered">
+				<table class="table table-bordered">
 				<thead>
 					<tr>
 <?php
@@ -199,7 +200,7 @@ foreach ($relations as $alias => $details):
 			echo "\t\t\t\t\t\t<th><?php echo __('" . Inflector::humanize($field) . "'); ?></th>\n";
 		}
 ?>
-						<th><?php echo "<?php echo __('Actions'); ?>"; ?></th>
+						<th style="border-collapse: collapse; white-space: nowrap; width: 1px;"><?php echo "<?php echo __('Actions'); ?>";//Auto resize to fit this ?></th>
 					</tr>
 				</thead>
 
@@ -211,15 +212,27 @@ foreach ($relations as $alias => $details):
 				echo "\t\t\t\t\t\t<td><?php echo \${$otherSingularVar}['{$field}']; ?></td>\n";
 			}
 
-			echo "\t\t\t\t\t\t<td>\n";
+			echo "\t\t\t\t\t\t<td class=\"text-center\" style=\"min-width: 8em;\">\n";
 
 			echo "\t\t\t\t\t\t\t<div class=\"btn-group\" role=\"group\">\n";
 
-			echo "\t\t\t\t\t\t\t<?php echo \$this->Html->link(__('View'), array('controller' => '{$details['controller']}', 'action' => 'view', \${$otherSingularVar}['{$details['primaryKey']}']), array('class' => 'btn btn-info btn-xs')); ?>\n";
+			echo "\t\t\t\t\t\t\t\t<?php echo \$this->Html->link(__('View'), array('controller' => '{$details['controller']}', 'action' => 'view', \${$otherSingularVar}['{$details['primaryKey']}']), array('class' => 'btn btn-default btn-sm')); ?>\n";
 
-			echo "\t\t\t\t\t\t\t<?php echo \$this->Html->link(__('Edit'), array('controller' => '{$details['controller']}', 'action' => 'edit', \${$otherSingularVar}['{$details['primaryKey']}']), array('class' => 'btn btn-warning btn-xs')); ?>\n";
+			$_separateButton =
+"								<a href=\"#\" class=\"btn btn-default btn-sm dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">
+									<span class=\"fa fa-caret-down\"></span>
+									<span class=\"sr-only\">Toggle Dropdown</span>
+								</a>";
 
-			echo "\t\t\t\t\t\t\t<?php echo \$this->Form->postLink(__('Delete'), array('controller' => '{$details['controller']}', 'action' => 'delete', \${$otherSingularVar}['{$details['primaryKey']}']), array('class' => 'btn btn-danger btn-xs'), __('Are you sure you want to delete # %s?', \${$otherSingularVar}['{$details['primaryKey']}'])); ?>\n";
+			echo "$_separateButton\n";
+
+			echo "\t\t\t\t\t\t\t\t<ul class=\"dropdown-menu\" role=\"menu\">\n";
+
+				echo "\t\t\t\t\t\t\t\t\t<li><?php echo \$this->Html->link('<i class=\"fa fa-edit fa-fw\"></i> ' . __('Edit'), array('controller' => '{$details['controller']}', 'action' => 'edit', \${$otherSingularVar}['{$details['primaryKey']}']), array('escape' => false)); ?></li>\n";
+
+				echo "\t\t\t\t\t\t\t\t\t<li><?php echo \$this->Form->postLink('<i class=\"fa fa-trash-o fa-fw\"></i> ' . __('Delete'), array('controller' => '{$details['controller']}', 'action' => 'delete', \${$otherSingularVar}['{$details['primaryKey']}']), array('escape' => false), __('Are you sure you want to delete # %s?', \${$otherSingularVar}['{$details['primaryKey']}'])); ?></li>\n";
+
+			echo "\t\t\t\t\t\t\t\t</ul>\n";
 
 			echo "\t\t\t\t\t\t\t</div>\n";
 
@@ -230,14 +243,16 @@ foreach ($relations as $alias => $details):
 		echo "\t<?php endforeach; ?>\n";
 	?>
 				</tbody>
-			</table>
+				</table>
 <?php 	echo "<?php endif; ?>\n\n"; ?>
 
-			<div class="panel-footer">
 				<div class="btn-group" role="group">
 <?php 	echo "\t\t\t\t<?php echo \$this->Html->link(__('New " . Inflector::humanize(Inflector::underscore($alias)) . "'), array('controller' => '{$details['controller']}', 'action' => 'add'), array('class' => 'btn btn-primary')); ?>\n"; ?>
 				</div>
+
+
 			</div>
+
 
 		</div>
 <?php

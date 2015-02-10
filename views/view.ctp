@@ -11,12 +11,12 @@
  * Redistributions of files must retain the above copyright notice.
  *
  * @copyright     Copyright (c) 2015 Nelson Martell (http://nelson6e65.github.io/)
- * @link          http://nelson6e65.github.io/pretty_bake/
- * @package       app.Console.Templates.pretty_bake.views
+ * @link          http://nelson6e65.github.io/pretty_cake/
+ * @package       app.Console.Templates.pretty_cake.views
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 ?>
-<!-- View baked using 'pretty_bake' template (http://git.io/NvUX). -->
+<!-- View baked using a 'pretty_cake' template (http://git.io/NvUX). -->
 <h2><?php echo "<?php echo __('{$singularHumanName}'); ?>"; ?></h1>
 
 <div id="<?php echo $pluralVar; ?>-view" class="panel panel-default">

@@ -48,10 +48,23 @@ On Windows, you can run:
     $ cd path/to/cakephp/app
     $ .\Console\cake bake -t "bake_bootstrap"
 
-#####Note:
-*If you changed the default theme name* (`bake_bootstrap`), you must run `$ .\Console\cake bake -t "{theme_name}"` command instead (where `{theme_name}` means your personalized name :wink:).
+If you don't pass `--theme` argument (or you typed a wrong template name), bake will ask you (at end) which template to use:
 
-Example: For `bootstrap` theme name, you can run instead:
+    ---------------------------------------------------------------
+    You have more than one set of templates installed.
+    Please choose the template set you wish to use:
+    ---------------------------------------------------------------
+    1. bake_bootstrap
+    2. default
+    Which bake theme would you like to use? (1/2)
+    [1] >
+
+Then, choose `bake_bootstrap` (`1` in this example) and press Enter to continue. :satisfied:
+
+#####Note:
+*If you changed the default theme name* (`bake_bootstrap`), you must run `$ .\Console\cake bake -t "{theme_name}"`  command instead (or select `{theme_name}` when bake ask you), where `{theme_name}` means your personalized name :wink:.
+
+Example: For `bootstrap` theme name, you should run instead:
 
     $ .\Console\cake bake -t "bootstrap"
 

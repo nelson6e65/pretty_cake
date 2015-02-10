@@ -1,4 +1,4 @@
-# Pretty Cake: A Cake Bake Console Template for apps using Bootstrap [Alpha]
+# Pretty Cake [Alpha]: A Cake Bake Console Template for CakePHP
 A personal template theme for baking custom views, using Twitter Bootstrap to perform user interface.
 
 ## Requirements 
@@ -8,7 +8,7 @@ This template theme is for Cake Bake Utility of [CakePHP 2.x](http://cakephp.org
   * [Bootstrap 3.x](http://getbootstrap.com/) (for now, only testing on 3.3.2)
   * [Font Awesome 4.x](http://fontawesome.io/) (for now, only testing on 4.2.0)
 
-**Note**: You should include this Cascading Style Sheets (\*.css) and JavaScript (\*.js) resources in your layout(s).
+**Note**: You should include those Cascading Style Sheets (\*.css) and JavaScript (\*.js) resources in your layout(s).
 
 ## Installation
 ### GIT submodule

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Pretty Bake: Cake Bake Console Template for CakePHP : A personal template theme for baking custom views">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Pretty Bake: Cake Bake Console Template for CakePHP</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/nelson6e65/pretty_bake">View on GitHub</a>
+
+          <h1 id="project_title">Pretty Bake: Cake Bake Console Template for CakePHP</h1>
+          <h2 id="project_tagline">A personal template theme for baking custom views</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/nelson6e65/pretty_bake/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/nelson6e65/pretty_bake/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="pretty-bake-a-cake-bake-console-template-for-apps-using-bootstrap-alpha" class="anchor" href="#pretty-bake-a-cake-bake-console-template-for-apps-using-bootstrap-alpha" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pretty Bake: A Cake Bake Console Template for apps using Bootstrap [Alpha]</h1>
+
+<p>A personal template theme for baking custom views, when app uses Twitter Bootstrap to perform user interface.</p>
+
+<h2>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h2>
+
+<p>This template theme is for Cake Bake Utility of <a href="http://cakephp.org/">CakePHP 2.x</a> (for now, only testing on 2.5.6).</p>
+
+<ul>
+<li>Resources
+
+<ul>
+<li>
+<a href="http://getbootstrap.com/">Bootstrap 3.x</a> (for now, only testing on 3.3.2)</li>
+<li>
+<a href="http://fontawesome.io/">Font Awesome 4.x</a> (for now, only testing on 4.2.0)</li>
+</ul>
+</li>
+</ul>
+
+<p><strong>Note</strong>: You should include this Cascading Style Sheets (*.css) and JavaScript (*.js) resources in your layout(s).</p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<h3>
+<a id="git-submodule" class="anchor" href="#git-submodule" aria-hidden="true"><span class="octicon octicon-link"></span></a>GIT submodule</h3>
+
+<blockquote>
+<p>Use this option if you wanna get the last work.</p>
+</blockquote>
+
+<p>In your <strong>app</strong> directory, type:</p>
+
+<pre><code>git submodule add https://github.com/nelson6e65/pretty_bake.git Console/Templates/pretty_bake
+git submodule init
+git submodule update
+</code></pre>
+
+<h5>
+<a id="note" class="anchor" href="#note" aria-hidden="true"><span class="octicon octicon-link"></span></a>Note:</h5>
+
+<p>You can use another name instead of <code>pretty_bake</code> <img class="emoji" title=":wink:" alt=":wink:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f609.png" height="20" width="20" align="absmiddle">. For example, if you wanna use just <code>bootstrap</code>, the run insted:</p>
+
+<pre><code>git submodule add https://github.com/nelson6e65/pretty_bake.git Console/Templates/bootstrap
+git submodule init
+git submodule update
+</code></pre>
+
+<h3>
+<a id="manual" class="anchor" href="#manual" aria-hidden="true"><span class="octicon octicon-link"></span></a>Manual</h3>
+
+<ul>
+<li>Download lastest <a href="https://github.com/nelson6e65/pretty_bake/archive/master.zip">zip</a> or <a href="https://github.com/nelson6e65/pretty_bake/releases">release</a>.</li>
+<li>Decompress it. You will get a  folder.</li>
+<li>Rename the resulting folder to <code>pretty_bake</code>.</li>
+<li>Move it under your templates directory (<code>app/Console/Templates/{here}</code>).</li>
+</ul>
+
+<h5>
+<a id="note-1" class="anchor" href="#note-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Note:</h5>
+
+<p>You can use another name instead of <code>pretty_bake</code>. For example, if you wanna use just <code>bootstrap</code>, then rename folder to <code>bootstrap</code>. <img class="emoji" title=":wink:" alt=":wink:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f609.png" height="20" width="20" align="absmiddle"></p>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>Once you installed, you are able to make bootstraped views with <a href="http://book.cakephp.org/2.0/en/console-and-shells/code-generation-with-bake.html">bake</a>. <img class="emoji" title=":smiley:" alt=":smiley:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f603.png" height="20" width="20" align="absmiddle"></p>
+
+<p>You just need to pass <code>-t</code> (<code>--theme</code>) argument to <code>cake bake</code>:</p>
+
+<pre><code>$ cake bake [subcommand] [-h] [-v] [-q] [-c default] [-t]
+</code></pre>
+
+<p>On Windows, you can run:</p>
+
+<pre><code>$ cd path/to/cakephp/app
+$ .\Console\cake bake -t "pretty_bake"
+</code></pre>
+
+<p>If you don't pass <code>--theme</code> argument (or you typed a wrong template name), bake will ask you (at end) which template to use:</p>
+
+<pre><code>---------------------------------------------------------------
+You have more than one set of templates installed.
+Please choose the template set you wish to use:
+---------------------------------------------------------------
+1. pretty_bake
+2. default
+Which bake theme would you like to use? (1/2)
+[1] &gt;
+</code></pre>
+
+<p>Then, choose <code>pretty_bake</code> (<code>1</code> in this example) and press Enter to continue. <img class="emoji" title=":satisfied:" alt=":satisfied:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f606.png" height="20" width="20" align="absmiddle"></p>
+
+<h5>
+<a id="note-2" class="anchor" href="#note-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Note:</h5>
+
+<p><em>If you changed the default theme name</em> (<code>pretty_bake</code>), you must run <code>$ .\Console\cake bake -t "{theme_name}"</code>  command instead (or select <code>{theme_name}</code> when bake ask you), where <code>{theme_name}</code> means your personalized name <img class="emoji" title=":wink:" alt=":wink:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f609.png" height="20" width="20" align="absmiddle">.</p>
+
+<p>Example: For <code>bootstrap</code> theme name, you should run instead:</p>
+
+<pre><code>$ .\Console\cake bake -t "bootstrap"
+</code></pre>
+
+<h2>
+<a id="instructions-faq" class="anchor" href="#instructions-faq" aria-hidden="true"><span class="octicon octicon-link"></span></a>Instructions FAQ</h2>
+
+<p><strong>What means <code>path/to/cakephp/app</code>?</strong></p>
+
+<blockquote>
+<p>[See below].</p>
+</blockquote>
+
+<p><strong>What means <code>app directory</code>?</strong></p>
+
+<blockquote>
+<p>Is de root path of your application. That is, by default, the <strong>app</strong> subdirectory of your CakePHP installation directory.</p>
+
+<p>For example, using wamp on Windows, <em>app directory</em> should be <code>C:\wamp\www\cakephp\app\</code> (if you installed CakePHP in <code>C:\wamp\www\cakephp\</code>).
+For further info, check <a href="http://book.cakephp.org/2.0/en/getting-started/cakephp-folder-structure.html#the-app-folder">CakePHP Folder Structure</a>.</p>
+</blockquote>
+
+<p><strong>Where are located console themes?</strong></p>
+
+<blockquote>
+<p>Console themes are placed inside your <code>app / Console / Templates /</code> directory:</p>
+
+<p><code>path/to/cakephp/app/Console/Templates/{here}</code>
+For further info, check <a href="http://book.cakephp.org/2.0/en/getting-started/cakephp-folder-structure.html#the-app-folder">CakePHP Folder Structure</a>.</p>
+</blockquote>
+
+<p><strong>Where should be located this theme?</strong></p>
+
+<blockquote>
+<p>As I said in install instructions, content of this theme <em>must</em> be located inside templates directory: <code>app / Console / Templates / {theme_name} /</code>.
+The default <code>{theme_name}</code> is <code>pretty_bake</code>:</p>
+
+<p><code>path/to/cakephp/app/Console/Templates/pretty_bake/</code></p>
+</blockquote>
+
+<p><strong>What is Git submodule?</strong></p>
+
+<blockquote>
+<p>Is a Git tool to treat the two projects as separate yet still be able to use one from within the other. Check this page: <a href="http://git-scm.com/book/en/v2/Git-Tools-Submodules">http://git-scm.com/book/en/v2/Git-Tools-Submodules</a></p>
+</blockquote>
+
+<h2>
+<a id="todo-list" class="anchor" href="#todo-list" aria-hidden="true"><span class="octicon octicon-link"></span></a>TODO List</h2>
+
+<h3>
+<a id="view-actions" class="anchor" href="#view-actions" aria-hidden="true"><span class="octicon octicon-link"></span></a>View actions</h3>
+
+<ul>
+<li>[ ] Personalize 'index' view</li>
+<li>[x] Personalize 'view' view </li>
+<li>[ ] Personalize 'add' view</li>
+<li>[ ] Personalize 'edit' view</li>
+<li>[ ] Add 'delete' view (?)</li>
+<li>[ ] Add 'find' view</li>
+</ul>
+
+<h3>
+<a id="controller-actions" class="anchor" href="#controller-actions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Controller actions</h3>
+
+<ul>
+<li>[ ] Personalize 'delete' action</li>
+<li>[ ] Add 'delete' action</li>
+<li>[ ] Add 'find' action</li>
+</ul>
+
+<h2>
+<a id="licence" class="anchor" href="#licence" aria-hidden="true"><span class="octicon octicon-link"></span></a>Licence</h2>
+
+<p>Licensed under The MIT License (MIT). Check <a href="/LICENSE">LICENSE</a> for full copyright and license information.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Pretty Bake: Cake Bake Console Template for CakePHP maintained by <a href="https://github.com/nelson6e65">nelson6e65</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>

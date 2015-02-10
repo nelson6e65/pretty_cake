@@ -11,7 +11,7 @@
  * Redistributions of files must retain the above copyright notice.
  *
  * @copyright     Copyright (c) 2015 Nelson Martell (http://nelson6e65.github.io/)
- * @link          nelson6e65.github.io/pretty_bake
+ * @link          http://nelson6e65.github.io/pretty_bake/
  * @package       app.Console.Templates.pretty_bake.views
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */

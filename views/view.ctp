@@ -20,7 +20,7 @@
 <h2><?php echo "<?php echo __('{$singularHumanName}'); ?>"; ?></h2>
 
 <div id="<?php echo $pluralVar; ?>-view" class="panel panel-default">
-	
+
 	<div class="panel-heading">
 		<h3 class="panel-title"><?php echo "<?php echo __('{$singularHumanName}' . ' data'); ?>"; ?></h3>
 	</div>

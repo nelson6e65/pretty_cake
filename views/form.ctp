@@ -18,13 +18,13 @@
 ?>
 <!-- View baked using a 'pretty_cake' template (http://git.io/NtTU). -->
 
-<?php 
-	$_isAdd = (strpos($action, 'add') !== false); 
-	$_isEdit = (strpos($action, 'edit') !== false); 
-	
+<?php
+	$_isAdd = (strpos($action, 'add') !== false);
+	$_isEdit = (strpos($action, 'edit') !== false);
+
 	$_panel_class = 'panel-default';
 	$_submitButtonText = 'Submit';
-	
+
 	if ($_isAdd) {
 		$_submitButtonText = 'Create';
 		$_panel_class = 'panel-primary';
@@ -37,24 +37,24 @@
 <h2><?php echo "<?php echo __('{$singularHumanName}'); ?>"; ?></h2>
 
 <div id="<?php echo $pluralVar . '-' . $action; ?>" class="panel panel-default">
-	
+
 	<div class="panel-heading">
 		<h3 class="panel-title"><?php printf("<?php echo __('%s %s'); ?>", Inflector::humanize($action), $singularHumanName); ?></h3>
 	</div>
-	
+
 	<div class="panel-body" style="overflow: auto;">
-	
-<?php 
-	echo "<?php 
+
+<?php
+	echo "<?php
 	echo \$this->Form->create('{$modelClass}', array(
 		'inputDefaults' => array(
 			'label' => array('class' => 'control-label'),
 			'div' => 'form-group',
 			'class' => 'form-control',
 		)
-	)); ?>\n"; 
+	)); ?>\n";
 ?>
-	
+
 	<fieldset>
 <?php
 	echo "\t<?php\n";
@@ -75,36 +75,36 @@
 	</fieldset>
 <?php
 	$_submitOptions = array(
-		
+
 	);
-	echo "<?php 
+	echo "<?php
 	echo \$this->Form->end(array(
 		'label' => __('{$_submitButtonText}'),
 		'div' => array(
 			'class' => 'form-group'
 		)
-	 )); 
+	 ));
 ?>";
 ?>
 
 	</div>
-	
+
 	<div class="panel-footer">
 		<div class="btn-toolbar" role="toolbar">
-			
+
 			<div class="btn-group" role="group">
-<?php 
+<?php
 	echo "\t\t\t\t<?php echo \$this->Html->link(__('List " . $pluralHumanName . "'), array('action' => 'index'), array('class' => 'btn btn-primary')); ?>\n";
-	
+
 	if (strpos($action, 'add') === false) {
-		echo "\t\t\t\t<?php echo \$this->Form->postLink(__('Delete'), array('action' => 'delete', \$this->Form->value('{$modelClass}.{$primaryKey}')), array('class' => 'btn btn-danger'), __('Are you sure you want to delete # %s?', \$this->Form->value('{$modelClass}.{$primaryKey}'))); ?>\n"; 
-	} 
-	
-	
+		echo "\t\t\t\t<?php echo \$this->Form->postLink(__('Delete'), array('action' => 'delete', \$this->Form->value('{$modelClass}.{$primaryKey}')), array('class' => 'btn btn-danger'), __('Are you sure you want to delete # %s?', \$this->Form->value('{$modelClass}.{$primaryKey}'))); ?>\n";
+	}
+
+
 
 ?>
 			</div>
-				
+
 			<div class="btn-group dropup" role="group">
 				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
 					<?php echo "<?php echo __('Related actions'); ?> <span class=\"caret\"></span>\n"; ?>
@@ -124,13 +124,13 @@
 	}
 ?>
 				</ul>
-			</div>	
-	
+			</div>
+
 		</div>
-	
-	
-	
+
+
+
 	</div>
-	
-	
+
+
 </div>

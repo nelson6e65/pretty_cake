@@ -161,7 +161,7 @@
 	<div class="panel-footer">
 		<div class="btn-toolbar" role="toolbar">
 			<div class="btn-group" role="group">
-				<?php echo "<?php echo \$this->Html->link(__('New " . $singularHumanName . "'), array('action' => 'add'), array('class' => 'btn btn-primary')); ?>"; ?>
+				<?php echo "<?php echo \$this->Html->link(__('New " . $singularHumanName . "'), array('action' => 'add'), array('class' => 'btn btn-primary')); ?>\n"; ?>
 			</div>
 
 			<div class="btn-group dropup" role="group">
@@ -172,20 +172,20 @@
 				</button>
 
 				<ul class="dropdown-menu" role="menu">
-	<?php
+<?php
 				$done = array();
 				foreach ($associations as $type => $data) {
 					foreach ($data as $alias => $details) {
 						if ($details['controller'] != $this->name && !in_array($details['controller'], $done)) {
-							echo "\t\t\t\t<li><?php echo \$this->Html->link(__('List " . Inflector::humanize($details['controller']) . "'), array('controller' => '{$details['controller']}', 'action' => 'index')); ?> </li>\n";
-							echo "\t\t\t\t<li><?php echo \$this->Html->link(__('New " . Inflector::humanize(Inflector::underscore($alias)) . "'), array('controller' => '{$details['controller']}', 'action' => 'add')); ?> </li>\n";
+							echo "\t\t\t\t\t<li><?php echo \$this->Html->link(__('List " . Inflector::humanize($details['controller']) . "'), array('controller' => '{$details['controller']}', 'action' => 'index')); ?> </li>\n";
+							echo "\t\t\t\t\t<li><?php echo \$this->Html->link(__('New " . Inflector::humanize(Inflector::underscore($alias)) . "'), array('controller' => '{$details['controller']}', 'action' => 'add')); ?> </li>\n";
 							$done[] = $details['controller'];
 						}
 					}
 				}
-	?>
+?>
 				</ul>
-
+			</div>
 		</div>
 	</div>
 </div>

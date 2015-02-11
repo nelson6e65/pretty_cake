@@ -17,7 +17,7 @@
  */
 ?>
 <!-- View baked using a 'pretty_cake' template (http://git.io/NtTU). -->
-<h2><?php echo "<?php echo __('{$singularHumanName}'); ?>"; ?></h1>
+<h2><?php echo "<?php echo __('{$singularHumanName}'); ?>"; ?></h2>
 
 <div id="<?php echo $pluralVar; ?>-view" class="panel panel-default">
 	

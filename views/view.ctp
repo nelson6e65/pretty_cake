@@ -16,7 +16,7 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 ?>
-<!-- View baked using a 'pretty_cake' template (http://git.io/NvUX). -->
+<!-- View baked using a 'pretty_cake' template (http://git.io/NtTU). -->
 <h2><?php echo "<?php echo __('{$singularHumanName}'); ?>"; ?></h1>
 
 <div id="<?php echo $pluralVar; ?>-view" class="panel panel-default">

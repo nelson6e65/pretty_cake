@@ -98,8 +98,8 @@ The default `{theme_name}` is `pretty_cake`:
 ### View actions
 - [x] Personalize 'index' view :cake:
 - [x] Personalize 'view' view :cake:
-- [ ] Personalize 'add' view
-- [ ] Personalize 'edit' view
+- [x] Personalize 'add' view
+- [x] Personalize 'edit' view
 - [ ] Add 'delete' view (?)
 - [ ] Add 'find' view
 

@@ -82,7 +82,8 @@
 		'label' => __('{$_submitButtonText}'),
 		'div' => array(
 			'class' => 'form-group'
-		)
+		),
+		'class' => 'btn btn-success'
 	 ));
 ?>";
 ?>

@@ -98,7 +98,7 @@
 <?php
 	echo "<?php
 			echo \$this->Paginator->prev(
-				'<i class=\"fa fa-step-backward fa-fw\"></i>',
+				'<i class=\"fa fa-chevron-left fa-fw\"></i>',
 				array(
 					'tag' => 'li',
 					'escape' => false,
@@ -113,6 +113,14 @@
 				)
 			);
 
+			echo \$this->Paginator->first(
+				'<i class=\"fa  fa-angle-double-left fa-fw\"></i>',
+				array(
+					'tag' => 'li',
+					'escape' => false,
+				)
+			);
+
 			echo \$this->Paginator->numbers(array(
 				'separator' => '',
 				'tag' => 'li',
@@ -120,8 +128,16 @@
 				'currentClass' => 'active'
 			));
 
+			echo \$this->Paginator->last(
+				'<i class=\"fa  fa-angle-double-right fa-fw\"></i>',
+				array(
+					'tag' => 'li',
+					'escape' => false,
+				)
+			);
+
 			echo \$this->Paginator->next(
-				'<i class=\"fa  fa-step-forward fa-fw\"></i>',
+				'<i class=\"fa fa-chevron-right fa-fw\"></i>',
 				array(
 					'tag' => 'li',
 					'escape' => false,
